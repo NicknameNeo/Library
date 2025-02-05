@@ -22,9 +22,9 @@ namespace Library.Service
             Console.WriteLine($"Пользователь {user.UserName} зарегистрирован.");
         }
 
-        public void RemoveUser(Guid userId)
+        public void RemoveUser(string userName)
         {
-            var user = Users.FirstOrDefault(u => u.Id == userId);
+            var user = Users.FirstOrDefault(u => u.UserName.Equals(userName, StringComparison.OrdinalIgnoreCase));
             if (user != null)
             {
                 Users.Remove(user);

@@ -256,15 +256,10 @@ namespace Library
                     return;
                 }
 
-                Console.Write("Введите ID пользователя для удаления: ");
-                if (Guid.TryParse(Console.ReadLine(), out Guid userId))
-                {
-                    _libraryService.RemoveUser(userId);
-                }
-                else
-                {
-                    Console.WriteLine("Неверный формат ID.");
-                }
+                Console.Write("Введите имя пользователя для удаления: ");
+                string userName = Console.ReadLine();
+
+                _libraryService.RemoveUser(userName);
             }
 
             static void AddBook()
